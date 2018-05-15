@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RouteCUDController">
+    <center>
+        <AnchorPane prefHeight="530.0" prefWidth="434.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblTitle" layoutY="1.0" prefHeight="50.0" prefWidth="350.0" text="                  Добавить маршрут">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            <Separator layoutX="15.0" layoutY="50.0" prefHeight="3.0" prefWidth="320.0" />
+                <Hyperlink fx:id="linkAddNew" layoutY="465.0" onAction="#performAddNewRoute" prefHeight="35.0" prefWidth="350.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="                         Добавить" textFill="#0094ff">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Hyperlink>
+            <Hyperlink fx:id="linkDelete" layoutY="465.0" onAction="#performDeleteRoute" prefHeight="35.0" prefWidth="175.0" style="-fx-underline: false; -fx-background-color: #ffd1d1;" text="         Удалить" textFill="#ff6464" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="linkSave" layoutX="175.0" layoutY="465.0" onAction="#performEditRoute" prefHeight="35.0" prefWidth="175.0" style="-fx-underline: false; -fx-background-color: #c3ffd7;" text="        Сохранить" textFill="#00c914" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Hyperlink>
+            <Label layoutX="30.0" layoutY="102.0" text="Название">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <TextField fx:id="txtName" layoutX="30.0" layoutY="127.0" prefHeight="25.0" prefWidth="290.0" promptText="введите название" />
+            <Label fx:id="lblcapPoint1" layoutX="30.0" layoutY="167.0" text="Точка № 1">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <ComboBox fx:id="cmbPoint1" layoutX="30.0" layoutY="192.0" prefHeight="25.0" prefWidth="216.0" promptText="выберите первую точку" />
+            <CheckBox fx:id="checkPoint1" layoutX="269.0" layoutY="183.0" mnemonicParsing="false" onAction="#checkOnePoint" prefHeight="35.0" prefWidth="40.0" selected="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+            <Label fx:id="lblcapPoint2" layoutX="30.0" layoutY="232.0" text="Точка № 2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbPoint2" layoutX="30.0" layoutY="257.0" prefHeight="25.0" prefWidth="216.0" promptText="выберите вторую точку" />
+            <CheckBox fx:id="checkPoint2" layoutX="269.0" layoutY="247.0" mnemonicParsing="false" onAction="#checkSecondPoint" prefHeight="35.0" prefWidth="40.0" selected="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+            <Label fx:id="lblcapPoint3" layoutX="30.0" layoutY="297.0" text="Точка № 3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbPoint3" layoutX="30.0" layoutY="322.0" prefHeight="25.0" prefWidth="216.0" promptText="выберите третью точку" />
+            <CheckBox fx:id="checkPoint3" layoutX="269.0" layoutY="312.0" mnemonicParsing="false" onAction="#checkThirdPoint" prefHeight="35.0" prefWidth="40.0" selected="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </CheckBox>
+                <Label fx:id="lbloldvalueName" layoutX="30.0" layoutY="66.0" text="Название">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VehicleCUDController">
+    <center>
+        <AnchorPane prefHeight="530.0" prefWidth="434.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblTitle" layoutY="1.0" prefHeight="50.0" prefWidth="350.0" text="      Добавить транспортное средство">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            <Separator layoutX="15.0" layoutY="50.0" prefHeight="3.0" prefWidth="320.0" />
+                <Hyperlink fx:id="linkAddNew" layoutY="465.0" onAction="#performAddNewVehicle" prefHeight="35.0" prefWidth="350.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="                         Добавить" textFill="#0094ff">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Hyperlink>
+            <Hyperlink fx:id="linkDelete" layoutY="465.0" onAction="#performDeleteVehicle" prefHeight="35.0" prefWidth="175.0" style="-fx-underline: false; -fx-background-color: #ffd1d1;" text="         Удалить" textFill="#ff6464" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="linkSave" layoutX="175.0" layoutY="465.0" onAction="#performEditVehicle" prefHeight="35.0" prefWidth="175.0" style="-fx-underline: false; -fx-background-color: #c3ffd7;" text="        Сохранить" textFill="#00c914" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Hyperlink>
+            <Label layoutX="30.0" layoutY="120.0" text="Модель">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtModel" layoutX="30.0" layoutY="145.0" prefHeight="25.0" prefWidth="290.0" promptText="введите модель" />
+            <Label layoutX="30.0" layoutY="185.0" text="Регистрационный номер">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRegnum" layoutX="30.0" layoutY="210.0" prefHeight="25.0" prefWidth="290.0" promptText="введите регистрационный номер" />
+            <Label fx:id="lbloldvalueModel" layoutX="30.0" layoutY="66.0" text="Модель">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbloldvalueRegnum" layoutX="30.0" layoutY="87.0" text="рег номер">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

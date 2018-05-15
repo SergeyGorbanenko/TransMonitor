@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MonitorController">
+    <center>
+        <AnchorPane prefHeight="600.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="25.0" prefWidth="1050.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Транспорт">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showMessagesList" text="Просмотр сообщений" />
+                    <MenuItem mnemonicParsing="false" onAction="#showVehicleList" text="Просмотр ТС" />
+                        <MenuItem mnemonicParsing="false" onAction="#goVehicleAdd" text="Добавить ТС" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Водители">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#showDriverList" text="Просмотр водителей" />
+                        <MenuItem mnemonicParsing="false" onAction="#goDriverAdd" text="Добавить водителя" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Маршруты">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#showRouteList" text="Просмотр маршрутов" />
+                        <MenuItem mnemonicParsing="false" onAction="#goRouteAdd" text="Добавить маршрут" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Точки маршрута">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#showPointList" text="Просмотр точек" />
+                        <MenuItem mnemonicParsing="false" onAction="#goPointAdd" text="Добавить точку" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Путевые листы">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#showWaybillList" text="Просмотр путевых листов" />
+                        <MenuItem mnemonicParsing="false" onAction="#goWaybillAdd" text="Добавить путевой лист" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Справка">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#showAbout" text="О программе" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Pane fx:id="mapPane" layoutY="25.0" onMouseClicked="#goPointAddFromMap" prefHeight="575.0" prefWidth="820.0" style="-fx-background-color: #caeed6; -fx-background-image: url('/barnaulmap.jpg');" />
+            <Hyperlink layoutX="830.0" layoutY="30.0" onAction="#showVehicleList" prefHeight="33.0" prefWidth="210.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="             Транспорт" textFill="#0094ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="830.0" layoutY="559.0" onAction="#Logout" prefHeight="25.0" prefWidth="210.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="                 Выход" textFill="#0094ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="830.0" layoutY="70.0" onAction="#showDriverList" prefHeight="33.0" prefWidth="210.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="             Водители" textFill="#0094ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="830.0" layoutY="110.0" onAction="#showRouteList" prefHeight="25.0" prefWidth="210.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="             Маршруты" textFill="#0094ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="830.0" layoutY="150.0" onAction="#showPointList" prefHeight="25.0" prefWidth="210.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="        Точки маршрута" textFill="#0094ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="830.0" layoutY="190.0" onAction="#showWaybillList" prefHeight="25.0" prefWidth="210.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="         Путевые листы" textFill="#0094ff">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="linkClearMap" layoutX="791.0" layoutY="28.0" onAction="#clearMap" prefHeight="24.0" prefWidth="24.0" style="-fx-underline: false; -fx-background-color: #def1ff; -fx-background-image: url('icons/ic_delete_black_24dp_1x.png');" />
+             <Hyperlink fx:id="linkShowAllRoutersOnMap" layoutX="761.0" layoutY="28.0" onAction="#showAllRoutersOnMap" prefHeight="24.0" prefWidth="24.0" style="-fx-underline: false; -fx-background-color: #def1ff; -fx-background-image: url('icons/ic_near_me_black_24dp_1x.png');" />
+             <Hyperlink fx:id="linkShowAllPointOnMap" layoutX="731.0" layoutY="28.0" onAction="#showAllPointOnMap" prefHeight="24.0" prefWidth="24.0" style="-fx-underline: false; -fx-background-color: #def1ff; -fx-background-image: url('icons/ic_pin_drop_black_24dp_1x.png');" />
+            <Separator layoutX="835.0" layoutY="233.0" prefWidth="200.0" />
+            <Separator layoutX="835.0" layoutY="549.0" prefWidth="200.0" />
+            <VBox fx:id="messageVBox" layoutX="830.0" layoutY="241.0" maxHeight="300.0" prefHeight="300.0" prefWidth="210.0" spacing="4.0" style="-fx-background-color: #eeeeee;">
+               <padding>
+                  <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+               </padding>
+            </VBox>
+            <Hyperlink fx:id="linkClearMessageVBox" layoutX="1016.0" layoutY="517.0" onAction="#clearMessageBox" prefHeight="24.0" prefWidth="24.0" style="-fx-underline: false; -fx-background-color: #def1ff; -fx-background-image: url('icons/ic_delete_black_24dp_1x.png');" />
+         </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

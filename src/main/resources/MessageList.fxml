@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MessageListController">
+    <center>
+        <AnchorPane prefHeight="530.0" prefWidth="434.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblTitle" layoutY="1.0" prefHeight="50.0" prefWidth="350.0" text="   Сообщения от датчиков транспорта">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            <Separator layoutX="15.0" layoutY="50.0" prefHeight="3.0" prefWidth="320.0" />
+                <ComboBox fx:id="cmbVehicle" layoutX="13.0" layoutY="61.0" onAction="#associateCmbVehicleWithTitle" prefHeight="25.0" prefWidth="160.0" promptText="выберите транспорт" />
+            <DatePicker fx:id="dtpDate" layoutX="178.0" layoutY="61.0" prefHeight="25.0" prefWidth="160.0" promptText="укажите дату" />
+            <ScrollPane fx:id="scrollPane" layoutY="97.0" prefHeight="370.0" prefWidth="350.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+                <Hyperlink layoutY="465.0" onAction="#performShowMessages" prefHeight="35.0" prefWidth="350.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="               Показать сообщения" textFill="#0094ff">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Hyperlink>
+            <Label fx:id="lblNotFound" layoutX="79.0" layoutY="115.0" text="Сообщения не найдены" textFill="#545454" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

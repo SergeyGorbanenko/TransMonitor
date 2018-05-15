@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ObjectListController">
+    <center>
+        <AnchorPane prefHeight="530.0" prefWidth="434.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane fx:id="scrollPane" layoutY="48.0" prefHeight="419.0" prefWidth="350.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="404.0" prefWidth="344.0" />
+              </content>
+            </ScrollPane>
+             <Hyperlink fx:id="linkAddNewObject" layoutY="465.0" prefHeight="35.0" prefWidth="350.0" style="-fx-underline: false; -fx-background-color: #def1ff;" text="             Добавить новый объект" textFill="#0094ff">
+                 <font>
+                     <Font name="System Bold" size="18.0" />
+                 </font>
+             </Hyperlink>
+            <Label fx:id="lblTitle" layoutY="1.0" prefHeight="50.0" prefWidth="350.0" text="                   Список объектов">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+             <Hyperlink fx:id="linkShowAllRoutersOnMap" layoutX="293.0" layoutY="10.0" onAction="#showAllRoutersOnMap" prefHeight="36.0" prefWidth="36.0" style="-fx-underline: false; -fx-background-image: url('icons/ic_near_me_black_36dp_1x.png');" visible="false" />
+             <Hyperlink fx:id="linkShowAllPointOnMap" layoutX="293.0" layoutY="10.0" onAction="#showAllPointOnMap" prefHeight="36.0" prefWidth="36.0" style="-fx-underline: false; -fx-background-image: url('icons/ic_pin_drop_black_36dp_1x.png');" visible="false" />
+            <Hyperlink fx:id="linkRefresh" layoutX="8.0" layoutY="10.0" prefHeight="36.0" prefWidth="36.0" style="-fx-underline: false; -fx-background-image: url('icons/baseline_refresh_black_36dp.png');" />
+         </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

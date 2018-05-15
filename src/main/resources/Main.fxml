@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AuthController">
+    <center>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="310.0" layoutY="107.0" text="Авторизация">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+                <Label layoutX="300.0" layoutY="166.0" text="Логин">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="loginField" layoutX="300.0" layoutY="193.0" onAction="#Join" onKeyPressed="#HideRedError" prefHeight="25.0" prefWidth="200.0" />
+                <Label layoutX="300.0" layoutY="239.0" text="Пароль">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="passwdField" layoutX="300.0" layoutY="266.0" onAction="#Join" onKeyPressed="#HideRedError" prefHeight="25.0" prefWidth="200.0" />
+                <Label fx:id="redError" layoutX="292.0" layoutY="363.0" text="Данные авторизации указаны неверно" textFill="RED" visible="false" />
+                <Hyperlink fx:id="join" layoutX="367.0" layoutY="309.0" onAction="#Join" style="-fx-underline: false;" text="Войти" textFill="#008cff">
+                   <font>
+                      <Font size="18.0" />
+                   </font>
+                </Hyperlink>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
